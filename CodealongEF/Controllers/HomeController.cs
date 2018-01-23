@@ -21,11 +21,11 @@ namespace CodealongEF.Controllers
             return View(myList);
         }
 
-        public ActionResult Create()
+        public ActionResult Create(string CName, int CAge)
         {
             Person me = new Person();
-            me.Name = "Bobbo";
-            me.Age = 99;
+            me.Name = CName;
+            me.Age = CAge;
 
             db.people.Add(me); //adds something to a DB (database)
             db.SaveChanges(); //saves changes (add Bobbo)
