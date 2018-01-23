@@ -33,5 +33,14 @@ namespace CodealongEF.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Delete(int id)
+        {
+            Person person = db.people.Find(id);
+            db.people.Remove(person);
+            db.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
     }
 }
